@@ -127,3 +127,23 @@ Attempt (command)
 
 Result
 - Succeeded when all required tags were provided.
+
+### Deny: Creating a Storage Account with secure transfer disabled (HTTPS-only = false)
+
+Attempt (command)
+
+    az storage account create -n st9989336 -g rg-policy-test-storage -l japaneast --sku Standard_LRS --https-only false --tags Owner=Ryosuke CostCenter=000 Environment=dev
+
+Result
+- Denied with: RequestDisallowedByPolicy
+- Triggered policy assignment:
+  - pa-secure-transfer-storage (Secure transfer required (Storage Accounts))
+- Policy definition:
+  - Secure transfer to storage accounts should be enabled
+  - /providers/Microsoft.Authorization/policyDefinitions/404c3081-a854-4457-ae30-26a93ef643f9
+- Policy effect: Deny
+- Evaluated expression:
+  - properties.supportsHttpsTrafficOnly == false
+
+Observed behavior
+- Storage account creation is denied when HTTPS-only (secure transfer) is disabled.
