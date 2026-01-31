@@ -25,6 +25,8 @@ CAF/ALZ思想に沿った Platform Landing Zone を IaC で構築・継続運用
 ## Constraints
 - 個人Azure環境（サブスク数・予算に制約）
 - Workloadは最小構成で“証跡”を作る
+- 個人Azure環境の権限制約によりManagement Groupの参照/作成ができないため、
+  本リポジトリではサブスクリプションスコープでPolicy/RBACを適用し、MG運用は設計として記載する。
 
 ## Scope
 ### In
