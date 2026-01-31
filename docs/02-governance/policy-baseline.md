@@ -2,7 +2,7 @@
 
 ## Purpose
 Platform Landing Zoneとして、最低限のガードレールを提供し、  
-セキュリティ運用性コスト統制の土台を確立する。
+セキュリティ・運用性・コスト統制の土台を確立する。
 
 ## Where to apply (scope)
 - Platform: 共通基盤ルール（監視/診断、タグ、コスト統制）を強制
@@ -13,11 +13,11 @@ Platform Landing Zoneとして、最低限のガードレールを提供し、
 
 ## Exception policy (how to handle)
 - 例外は期限付き（例：30日）で発行し、期限前に棚卸し
-- 例外理由影響範囲代替案恒久対応の計画を必須入力
+- 例外理由・影響範囲・代替案・恒久対応の計画を必須入力
 - 例外は「誰が承認し、どこに記録するか」を明確化する（運用プロセスへ）
 
 ## Initial Policy Set (v1)
-> まずは事故りやすい効果が高いものから10個に絞る
+> まずは「事故りやすい／効果が高い」ものから10個に絞る
 
 ### 1. Required Tags
 - Enforce: Owner, CostCenter, Environment
@@ -48,15 +48,15 @@ Implementation (current)
 
 ### 3. Budget & Cost Alerts (Subscription level)
 - Enforce: 月額上限＋閾値アラート（50/80/100%）
-- Why: 個人環境でも運用として必須
+- Why: 個人環境でも「運用として」必須
 
 ### 4. Diagnostic Settings for Activity Log
-- Enforce: Activity Log  Log Analytics
-- Why: 監査インシデント調査の土台
+- Enforce: Activity Log → Log Analytics
+- Why: 監査/インシデント調査の土台
 
 ### 5. Diagnostic Settings for Key Resources
 - Enforce: 対象リソースの診断ログをLog Analyticsへ（段階的に拡張）
-- Why: 監視できない状態を防ぐ
+- Why: 「監視できない」状態を防ぐ
 
 ### 6. Public IP Restriction
 - Enforce: Public IPの作成/付与を制限（例外運用あり）
@@ -99,6 +99,31 @@ Result
 Observed behavior
 - Resource creation fails when any of the required tags (Owner/CostCenter/Environment) is missing.
 
-## Roadmap
-- v2: ワークロード種別ごとの診断設定拡充、Deny/DeployIfNotExistsの整理
-- v3: RBACとセットで例外運用の実装（記録期限棚卸し）まで自動化
+### Deny: Creating a Resource Group without required tags
+
+Attempt (command)
+
+    az group create -n rg-policy-test-notags4 -l japaneast
+
+Result
+- Denied with: RequestDisallowedByPolicy
+- Policy effect: deny
+- Triggered policy assignments:
+  - pa-require-rg-tag-owner
+  - pa-require-rg-tag-costcenter
+  - pa-require-rg-tag-environment
+- Policy definition:
+  - Require a tag on resource groups
+  - /providers/Microsoft.Authorization/policyDefinitions/96670d01-0a4d-4649-9c89-2d3abc0a5025
+
+Observed behavior
+- Resource group creation fails when any of the required tags (Owner/CostCenter/Environment) is missing.
+
+### Allowed: Creating a Resource Group with required tags
+
+Attempt (command)
+
+    az group create -n rg-policy-test-tags -l japaneast --tags Owner=Ryosuke CostCenter=000 Environment=dev
+
+Result
+- Succeeded when all required tags were provided.
