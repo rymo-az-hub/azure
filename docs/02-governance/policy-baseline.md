@@ -147,3 +147,16 @@ Result
 
 Observed behavior
 - Storage account creation is denied when HTTPS-only (secure transfer) is disabled.
+
+### Allowed: Creating a Storage Account with secure transfer enabled (HTTPS-only = true)
+
+Attempt (command)
+
+    az storage account create -n st4611269 -g rg-policy-test-storage -l japaneast --sku Standard_LRS --https-only true --tags Owner=Ryosuke CostCenter=000 Environment=dev
+
+Result
+- Succeeded
+- Observed properties:
+  - enableHttpsTrafficOnly: true
+- Observed behavior:
+  - Storage account creation succeeds when HTTPS-only (secure transfer) is enabled.
