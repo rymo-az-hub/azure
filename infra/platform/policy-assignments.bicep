@@ -22,6 +22,17 @@ param requiredTagNames array = [
   'Environment'
 ]
 
+@description('Secure transfer to storage accounts policy definition ID')
+param secureTransferPolicyDefinitionId string
+
+@description('Effect for secure transfer policy (Audit/Deny/Disabled)')
+@allowed([
+  'Audit'
+  'Deny'
+  'Disabled'
+])
+param secureTransferEffect string = 'Deny'
+
 resource allowedLocationsAssignment 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
   name: 'pa-allowed-locations'
   properties: {
@@ -60,3 +71,16 @@ resource requireRgTagAssignments 'Microsoft.Authorization/policyAssignments@2022
     }
   }
 }]
+
+resource secureTransferAssignment 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
+  name: 'pa-secure-transfer-storage'
+  properties: {
+    displayName: 'Secure transfer required (Storage Accounts)'
+    policyDefinitionId: secureTransferPolicyDefinitionId
+    parameters: {
+      effect: {
+        value: secureTransferEffect
+      }
+    }
+  }
+}

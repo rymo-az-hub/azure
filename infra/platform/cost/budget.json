@@ -1,0 +1,119 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.40.2.10011",
+      "templateHash": "13824537657399690293"
+    }
+  },
+  "parameters": {
+    "budgetName": {
+      "type": "string",
+      "defaultValue": "bg-platform-baseline-v1",
+      "metadata": {
+        "description": "Budget name (subscription scope)."
+      }
+    },
+    "amount": {
+      "type": "int",
+      "defaultValue": 200,
+      "metadata": {
+        "description": "Budget amount for the period (currency depends on subscription billing settings; typically USD)."
+      }
+    },
+    "timeGrain": {
+      "type": "string",
+      "defaultValue": "Monthly",
+      "allowedValues": [
+        "Monthly",
+        "Quarterly",
+        "Annually"
+      ],
+      "metadata": {
+        "description": "Budget period."
+      }
+    },
+    "startDate": {
+      "type": "string",
+      "defaultValue": "2026-02-01T00:00:00Z",
+      "metadata": {
+        "description": "Budget start date (ISO 8601). Example: 2026-02-01T00:00:00Z"
+      }
+    },
+    "endDate": {
+      "type": "string",
+      "defaultValue": "2030-12-31T00:00:00Z",
+      "metadata": {
+        "description": "Budget end date (ISO 8601). Keep far-future for continuous operation."
+      }
+    },
+    "contactEmails": {
+      "type": "array",
+      "defaultValue": [
+        "replace-me@example.com"
+      ],
+      "metadata": {
+        "description": "Notification email recipients."
+      }
+    },
+    "threshold1": {
+      "type": "int",
+      "defaultValue": 80,
+      "metadata": {
+        "description": "Threshold percentage for notification #1."
+      }
+    },
+    "threshold2": {
+      "type": "int",
+      "defaultValue": 100,
+      "metadata": {
+        "description": "Threshold percentage for notification #2."
+      }
+    }
+  },
+  "variables": {
+    "notifications": {
+      "Actual_GreaterThan_80_Percent": {
+        "enabled": true,
+        "operator": "GreaterThan",
+        "threshold": "[parameters('threshold1')]",
+        "contactEmails": "[parameters('contactEmails')]",
+        "contactRoles": [],
+        "contactGroups": []
+      },
+      "Actual_GreaterThan_100_Percent": {
+        "enabled": true,
+        "operator": "GreaterThan",
+        "threshold": "[parameters('threshold2')]",
+        "contactEmails": "[parameters('contactEmails')]",
+        "contactRoles": [],
+        "contactGroups": []
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Consumption/budgets",
+      "apiVersion": "2023-05-01",
+      "name": "[parameters('budgetName')]",
+      "properties": {
+        "category": "Cost",
+        "amount": "[parameters('amount')]",
+        "timeGrain": "[parameters('timeGrain')]",
+        "timePeriod": {
+          "startDate": "[parameters('startDate')]",
+          "endDate": "[parameters('endDate')]"
+        },
+        "notifications": "[variables('notifications')]"
+      }
+    }
+  ],
+  "outputs": {
+    "budgetId": {
+      "type": "string",
+      "value": "[subscriptionResourceId('Microsoft.Consumption/budgets', parameters('budgetName'))]"
+    }
+  }
+}
