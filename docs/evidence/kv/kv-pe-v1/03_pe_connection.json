@@ -1,0 +1,11 @@
+[
+  {
+    "description": "Private Endpoint for Key Vault",
+    "groupIds": [
+      "vault"
+    ],
+    "name": "pe-kv-plat-dev-45bddcd7-001-kv",
+    "privateLinkServiceId": "/subscriptions/45bddcd7-c7d9-4492-b899-31f78c4cf368/resourceGroups/rg-platform-baseline/providers/Microsoft.KeyVault/vaults/kv-plat-dev-45bddcd7-001",
+    "status": "Approved"
+  }
+]

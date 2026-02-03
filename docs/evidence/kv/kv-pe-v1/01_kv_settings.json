@@ -1,0 +1,8 @@
+{
+  "enablePurgeProtection": true,
+  "enableRbacAuthorization": true,
+  "enableSoftDelete": true,
+  "name": "kv-plat-dev-45bddcd7-001",
+  "publicNetworkAccess": "Disabled",
+  "softDeleteRetentionInDays": 90
+}

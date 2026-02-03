@@ -1,0 +1,38 @@
+[
+  {
+    "id": "/subscriptions/45bddcd7-c7d9-4492-b899-31f78c4cf368/resourcegroups/rg-platform-baseline/providers/microsoft.keyvault/vaults/kv-plat-dev-45bddcd7-001/providers/microsoft.insights/diagnosticSettings/diag-to-law",
+    "logAnalyticsDestinationType": "AzureDiagnostics",
+    "logs": [
+      {
+        "category": "AuditEvent",
+        "enabled": true,
+        "retentionPolicy": {
+          "days": 0,
+          "enabled": false
+        }
+      },
+      {
+        "category": "AzurePolicyEvaluationDetails",
+        "enabled": false,
+        "retentionPolicy": {
+          "days": 0,
+          "enabled": false
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "category": "AllMetrics",
+        "enabled": false,
+        "retentionPolicy": {
+          "days": 0,
+          "enabled": false
+        }
+      }
+    ],
+    "name": "diag-to-law",
+    "resourceGroup": "rg-platform-baseline",
+    "type": "Microsoft.Insights/diagnosticSettings",
+    "workspaceId": "/subscriptions/45bddcd7-c7d9-4492-b899-31f78c4cf368/resourceGroups/rg-platform-baseline/providers/Microsoft.OperationalInsights/workspaces/law-platform-baseline"
+  }
+]

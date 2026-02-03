@@ -1,0 +1,12 @@
+
+
+ComputerName     : kv-plat-dev-45bddcd7-001.vault.azure.net
+RemoteAddress    : 40.79.191.192
+RemotePort       : 443
+InterfaceAlias   : Wi-Fi
+SourceAddress    : 192.168.147.56
+TcpTestSucceeded : True
+
+
+
+

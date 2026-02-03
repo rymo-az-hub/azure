@@ -1,0 +1,1 @@
+/subscriptions/45bddcd7-c7d9-4492-b899-31f78c4cf368/resourceGroups/rg-network-baseline/providers/Microsoft.Network/virtualNetworks/vnet-platform-baseline/subnets/snet-privatelink

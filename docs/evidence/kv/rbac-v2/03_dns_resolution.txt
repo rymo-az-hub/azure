@@ -1,0 +1,21 @@
+nslookup : 権限のない回答:
+発生場所 行:1 文字:1
++ nslookup "$kv.vault.azure.net" 2>&1 | Out-File "$ev/03_dns_resolution ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (権限のない回答::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+サーバー:  one.one.one.one
+Address:  2606:4700:4700::1111
+
+名前:    kwa.tm.prd.r.kv.aadg.akadns.net
+Addresses:  40.79.197.112
+	  13.78.106.88
+	  40.79.191.192
+Aliases:  kv-plat-dev-45bddcd7-001.vault.azure.net
+	  kv-plat-dev-45bddcd7-001.privatelink.vaultcore.azure.net
+	  data-prod-ejp.vaultcore.azure.net
+	  data-prod-ejp-region.vaultcore.azure.net
+	  kwa.prd.r.kv.aadg.msidentity.com
+

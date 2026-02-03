@@ -1,0 +1,29 @@
+C:\Users\Ryosuke.M\source\repos\azure\infra\kv-pe-v1\main.bicep(70,9) : Warning use-parent-property: Resource "vnetLink" has its name formatted as a child of resource "pdz". The syntax can be simplified by using the parent property. [https://aka.ms/bicep/linter-diagnostics#use-parent-property]
+C:\Users\Ryosuke.M\source\repos\azure\infra\kv-pe-v1\main.bicep(107,9) : Warning use-parent-property: Resource "zoneGroup" has its name formatted as a child of resource "pe". The syntax can be simplified by using the parent property. [https://aka.ms/bicep/linter-diagnostics#use-parent-property]
+C:\Users\Ryosuke.M\source\repos\azure\infra\kv-pe-v1\main.bicep(119,5) : Warning no-unnecessary-dependson: Remove unnecessary dependsOn entry 'pe'. [https://aka.ms/bicep/linter-diagnostics#no-unnecessary-dependson]
+C:\Users\Ryosuke.M\source\repos\azure\infra\kv-pe-v1\main.bicep(120,5) : Warning no-unnecessary-dependson: Remove unnecessary dependsOn entry 'pdz'. [https://aka.ms/bicep/linter-diagnostics#no-unnecessary-dependson]
+
+Note: The result may contain false positive predictions (noise).
+
+Scope: /subscriptions/45bddcd7-c7d9-4492-b899-31f78c4cf368/resourceGroups/rg-platform-baseline
+
++ Microsoft.KeyVault/vaults/kv-plat-dev-45bddcd7-001 [2023-07-01]
+    properties.publicNetworkAccess: "Disabled"
+    properties.enableRbacAuthorization: true
+    properties.enableSoftDelete: true
+    properties.enablePurgeProtection: true
+    properties.softDeleteRetentionInDays: 90
+    tags.Owner: "platform"
+    tags.CostCenter: "cc000"
+    tags.Environment: "dev"
+
++ Microsoft.Insights/diagnosticSettings/diag-to-law [2021-05-01-preview]
+    logs: AuditEvent enabled
+    workspaceId: .../law-platform-baseline
+
++ Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net [2020-06-01]
++ Microsoft.Network/privateDnsZones/virtualNetworkLinks/link-... [2020-06-01]
++ Microsoft.Network/privateEndpoints/pe-kv-plat-dev-45bddcd7-001 [2023-09-01]
++ Microsoft.Network/privateEndpoints/privateDnsZoneGroups/default [2023-09-01]
+
+Resource changes: 6 to create, 2 to ignore.
