@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "keyVaultName": { "value": "kv-plat-dev-45bddcd7-001" },
+    "kvAdmins": { "value": [] },
+    "secretsOfficers": { "value": ["eeb850f4-8f4c-4daf-a2f2-99cbab6e8184"] },
+    "secretsUsers": { "value": ["eeb850f4-8f4c-4daf-a2f2-99cbab6e8184"] },
+    "kvReaders": { "value": [] }
+  }
+}

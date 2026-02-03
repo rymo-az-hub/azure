@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": { "value": "japaneast" },
+    "keyVaultName": { "value": "kvplatbaselinedev001" },
+    "skuName": { "value": "standard" },
+
+    "tagOwner": { "value": "ryosuke" },
+    "tagCostCenter": { "value": "cc-000" },
+    "tagEnvironment": { "value": "dev" },
+
+    "lawName": { "value": "law-platform-baseline" },
+    "lawResourceGroup": { "value": "rg-platform-monitoring" },
+
+    "enableMetrics": { "value": false },
+    "softDeleteRetentionInDays": { "value": 90 }
+  }
+}
