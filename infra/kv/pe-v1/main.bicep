@@ -129,13 +129,6 @@ resource kvDiag 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
           days: 0
         }
       }
-      {
-        category: 'AzurePolicyEvaluationDetails'
-        enabled: false
-        retentionPolicy: {
-          enabled: false
-          days: 0
-        }
       }
     ]
     metrics: [
