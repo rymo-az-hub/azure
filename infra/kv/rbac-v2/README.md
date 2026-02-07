@@ -66,7 +66,7 @@ az deployment group create -g rg-platform-baseline -f rbac.bicep -p rbac.paramet
 
 ## 4) Evidence（v2）
 ```
-evidence/
+docs/evidence/
   kv-rbac-v2/
     00_what-if.txt
     01_role_assignments_kv.json
@@ -75,7 +75,7 @@ evidence/
 
 取得:
 ```powershell
-$ev = "evidence/kv-rbac-v2"
+$ev = "docs/evidence/kv/rbac-v2"
 New-Item -ItemType Directory -Force $ev | Out-Null
 
 az deployment group what-if -g rg-platform-baseline -f rbac.bicep -p rbac.parameters.json 2>&1 |

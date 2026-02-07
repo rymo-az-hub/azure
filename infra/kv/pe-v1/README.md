@@ -86,7 +86,7 @@ az deployment group create -g rg-platform-baseline -f main.bicep -p main.paramet
 以下の Evidence ファイルは **既に作成済み**です（本 README はその前提で管理します）。
 
 ```
-evidence/
+docs/evidence/
   kv-pe-v1/
     00_what-if.txt
     01_kv_settings.json
@@ -112,7 +112,7 @@ Markdown（.md）に整形すると見やすくなりますが、**証跡とし�
 ※既に Evidence がある場合は不要です。
 
 ```powershell
-$ev = "evidence/kv-pe-v1"
+$ev = "docs/evidence/kv/kv-pe-v1"
 New-Item -ItemType Directory -Force $ev | Out-Null
 
 az deployment group what-if -g rg-platform-baseline -f main.bicep -p main.parameters.json 2>&1 `

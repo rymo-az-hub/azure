@@ -1,14 +1,14 @@
-\# ADR-0002: Management Group hierarchy strategy (design vs implementation)
+# ADR-0002: Management Group hierarchy strategy (design vs implementation)
 
 
 
-\## Status
+## Status
 
 Accepted (design), Deferred (implementation)
 
 
 
-\## Context
+## Context
 
 本来のAzure Landing ZoneではManagement Group階層で統制をスケールさせる。
 
@@ -16,7 +16,7 @@ Accepted (design), Deferred (implementation)
 
 
 
-\## Decision
+## Decision
 
 \- 設計としてはMG階層（platform / landingzones corp-online / sandbox）を採用する
 
@@ -24,9 +24,9 @@ Accepted (design), Deferred (implementation)
 
 
 
-\## Consequences
+## Consequences
 
-\### Pros
+### Pros
 
 \- LZとしての設計意図（適用単位/責任分界/例外運用）を説明できる
 
@@ -34,7 +34,7 @@ Accepted (design), Deferred (implementation)
 
 
 
-\### Cons / Risks
+### Cons / Risks
 
 \- MGスコープの実装検証（policy assignment at MG）ができない
 
@@ -42,7 +42,7 @@ Accepted (design), Deferred (implementation)
 
 
 
-\## Follow-ups
+## Follow-ups
 
 \- MGが利用できる環境が確保でき次第、MGスコープへの移植を行い、証跡を追加する
 

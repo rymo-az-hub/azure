@@ -1,14 +1,14 @@
-\# ADR-0001: IaC tooling selection (Bicep + Azure CLI)
+# ADR-0001: IaC tooling selection (Bicep + Azure CLI)
 
 
 
-\## Status
+## Status
 
 Accepted
 
 
 
-\## Context
+## Context
 
 個人Azure環境でPlatform/LZ相当のガードレールを構築し、採用で評価される「再現性・変更管理・証跡」を残す必要がある。
 
@@ -16,7 +16,7 @@ ARMテンプレートは冗長になりやすく、Terraformは状態管理や�
 
 
 
-\## Decision
+## Decision
 
 \- IaCは Bicep を採用する
 
@@ -26,9 +26,9 @@ ARMテンプレートは冗長になりやすく、Terraformは状態管理や�
 
 
 
-\## Consequences
+## Consequences
 
-\### Pros
+### Pros
 
 \- Azureネイティブで学習・実装の速度が速い
 
@@ -38,7 +38,7 @@ ARMテンプレートは冗長になりやすく、Terraformは状態管理や�
 
 
 
-\### Cons / Risks
+### Cons / Risks
 
 \- Terraformのようなマルチクラウド性・状態管理の学習機会は薄い
 
@@ -46,7 +46,7 @@ ARMテンプレートは冗長になりやすく、Terraformは状態管理や�
 
 
 
-\## Alternatives considered
+## Alternatives considered
 
 \- Terraform（状態管理・モジュール化は強いが、個人環境での運用負荷が上がる）
 
