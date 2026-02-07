@@ -1,0 +1,55 @@
+{
+    "$schema":  "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion":  "1.0.0.0",
+    "parameters":  {
+                       "location":  {
+                                        "value":  "japaneast"
+                                    },
+                       "keyVaultName":  {
+                                            "value":  "kv-plat-dev-45bddcd7-001"
+                                        },
+                       "logAnalyticsWorkspaceId":  {
+                                                       "value":  "/subscriptions/45bddcd7-c7d9-4492-b899-31f78c4cf368/resourceGroups/rg-platform-baseline/providers/Microsoft.OperationalInsights/workspaces/law-platform-baseline"
+                                                   },
+                       "vnetId":  {
+                                      "value":  "/subscriptions/45bddcd7-c7d9-4492-b899-31f78c4cf368/resourceGroups/rg-network-baseline/providers/Microsoft.Network/virtualNetworks/vnet-platform-baseline"
+                                  },
+                       "privateEndpointSubnetId":  {
+                                                       "value":  "/subscriptions/45bddcd7-c7d9-4492-b899-31f78c4cf368/resourceGroups/rg-network-baseline/providers/Microsoft.Network/virtualNetworks/vnet-platform-baseline/subnets/snet-privatelink"
+                                                   },
+                       "privateEndpointName":  {
+                                                   "value":  "pe-kv-plat-dev-45bddcd7-001"
+                                               },
+                       "tags":  {
+                                    "value":  {
+                                                  "Owner":  "platform",
+                                                  "CostCenter":  "cc000",
+                                                  "Environment":  "dev"
+                                              }
+                                },
+                       "kvAdmins":  {
+                                        "value":  [
+
+                                                  ]
+                                    },
+                       "enablePurgeProtection":  {
+                                                     "value":  true
+                                                 },
+                       "secretsOfficers": {
+         "value": [
+    "621f3586-6b13-4f09-a0c2-111f7bb2b256"
+  ]
+}
+,
+                       "secretsUsers":  {
+                                            "value":  [
+                                                          "fb36d03b-e3b0-4a80-a74a-9765b1182130"
+                                                      ]
+                                        },
+                       "kvReaders":  {
+                                         "value":  [
+
+                                                   ]
+                                     }
+                   }
+}

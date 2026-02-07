@@ -129,7 +129,6 @@ resource kvDiag 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
           days: 0
         }
       }
-      }
     ]
     metrics: [
       {
@@ -143,6 +142,7 @@ resource kvDiag 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
     ]
   }
 }
+
 
 // Optional RBAC assignments (Key Vault Administrator)
 // principalType is intentionally not set to avoid mismatches (User/Group/SPN)
