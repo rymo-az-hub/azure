@@ -3,3 +3,6 @@
 --query
 tmp-monitoring-tags.json
 
+
+.githooks/
+
