@@ -1,9 +1,7 @@
-KV RBAC v2 Evidence package
+# Evidence
 
-Contents:
-- docs/evidence/kv-rbac-v2-evidence.md : Evidence procedure & checklist
-- docs/evidence/screenshots/kv-rbac-v2/ : Put your screenshots here (empty folder placeholder)
+This folder contains evidence artifacts (logs, outputs, and indices) used to validate baseline configurations.
 
-How to use:
-1) Create 'docs/evidence' in your repo (mkdir commands provided in chat).
-2) Copy the contents of this package into your repo root, preserving paths.
+## Index
+- KV (Key Vault)
+  - RBAC v2: ./kv/rbac-v2/README.md
