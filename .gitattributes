@@ -1,1 +1,6 @@
-* text=auto eol=lf
+# Text files: normalize line endings
+* text=auto
+
+# Docs
+*.md text eol=lf
+*.txt text eol=lf
