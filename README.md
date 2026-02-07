@@ -14,7 +14,7 @@ This repository focuses on **reproducible infrastructure** (IaC) and **verifiabl
   - `docs/evidence/` : verification outputs (CLI/PS outputs, JSON exports)
   - `docs/00-progress/` : day-by-day progress logs and command logs
 
-## Key Vault – quick pointers
+## Key Vault 窶・quick pointers
 - IaC:
   - `infra/kv/pe-v1/`
   - `infra/kv/rbac-v2/`
@@ -24,3 +24,8 @@ This repository focuses on **reproducible infrastructure** (IaC) and **verifiabl
 
 ## Line endings
 This repository is normalized to **LF** via `.gitattributes`.
+
+## Docs
+
+- docs/00-context/context.md : 学習環境前提作業方針（このリポジトリの前提条件）
+- docs/01-architecture/context.md : アーキテクチャの前提（設計判断の土台）
